@@ -14,6 +14,19 @@ services:
       - my_network
     volumes:
       - data_volume:/var/lib/postgresql/data
+  mongo:
+    image: mongo:latest
+    container_name: my_mongo_db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mongopw
+      
+    ports:
+      - "27017:27017"
+    networks:
+      - my_network
+    volumes:
+      - mongoDB_Data:/var/lib/mongodb/data
 
   pgadmin:
     image: dpage/pgadmin4:latest
@@ -30,6 +43,8 @@ services:
 
 volumes:
   data_volume:
+    external: true
+  mongoDB_Data:
     external: true
 
 networks:
