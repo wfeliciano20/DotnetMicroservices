@@ -40,6 +40,14 @@ services:
       - my_network
     depends_on:
       - postgres
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: my_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - my_network
 
 volumes:
   data_volume:
