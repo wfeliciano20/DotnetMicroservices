@@ -6,9 +6,6 @@
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <Content Remove="Pages\Account\Register\Index.cshtml" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.0" />
